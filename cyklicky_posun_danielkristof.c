@@ -2,31 +2,30 @@
  
 void cyklicky_posun_rychlo(int *p,int l,int s)
 { 
-    int i,j,temp;
-    for(i=0; i<s; i++)
-    {
-        temp=p[l-1];
-        for(j=l-1; j>0; j--)
-        {
-           p[j]=p[j-1];
+	s=s%l;
+	int i,j,temp,posun;
+	for (i=0;i<3;i++)
+	{
+		j=i;
+		temp=p[i];
+		while(1<2)
+		{
+			posun=(j+s)%l;
+			if(posun = i) break;
+			p[j]=p[posun];
+			j=posun;
 		}
- 
-         p[j]=temp;
-    }
-    
-       
- }
+		p[j]=temp;
+	}
+}
  
 void print(int *p,int n)
 { 
-   
     int i;
     for(i=0; i<n; i++)
     {
-       printf("%d ",p[i]);
-    }
-    
-       
+    printf("%d ",p[i]);    
+	}
  }
  
   
@@ -34,7 +33,6 @@ int main()
 {
 	srand(time(0)); 
     int pole[100000],i,n,k;
-    
     printf("Zadaj velkost pola:\n");
     scanf("%d", &n);
     
@@ -51,7 +49,8 @@ int main()
     cyklicky_posun_rychlo(pole,n,k);
     printf("Pole po posunuti:\n");
  
-    print(pole,n);
-    
+    print(pole,n);    
  	return 0;
+ 	
 }
+
