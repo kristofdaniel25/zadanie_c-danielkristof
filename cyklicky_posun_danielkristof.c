@@ -2,7 +2,7 @@
  
 void cyklicky_posun_rychlo(int *p,int l,int s)
 { 
-	s=s%l;
+    s=l-s;
 	int i,j,temp,posun;
 	for (i=0;i<NSD(l,s);i++)
 	{
@@ -16,6 +16,7 @@ void cyklicky_posun_rychlo(int *p,int l,int s)
 			j=posun;
 		}
 		p[j]=temp;
+
 	}
 }
 
@@ -30,7 +31,7 @@ void print(int *p,int n)
     int i;
     for(i=0; i<n; i++)
     {
-    printf("%d ",p[i]);    
+    printf("%.2d ",p[i]);    
 	}
  }
  
