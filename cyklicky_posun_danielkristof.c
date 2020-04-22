@@ -4,21 +4,27 @@ void cyklicky_posun_rychlo(int *p,int l,int s)
 { 
 	s=s%l;
 	int i,j,temp,posun;
-	for (i=0;i<3;i++)
+	for (i=0;i<NSD(l,s);i++)
 	{
 		j=i;
 		temp=p[i];
-		while(1<2)
+		while(1)
 		{
 			posun=(j+s)%l;
-			if(posun = i) break;
+			if(posun == i) break;
 			p[j]=p[posun];
 			j=posun;
 		}
 		p[j]=temp;
 	}
 }
- 
+
+int NSD(int a, int b)
+{
+	if (b==0) return a;
+	else return NSD(b, a%b);
+}
+
 void print(int *p,int n)
 { 
     int i;
