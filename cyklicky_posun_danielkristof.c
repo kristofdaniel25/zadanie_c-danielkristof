@@ -1,8 +1,8 @@
 #include <stdio.h>
  
 void cyklicky_posun_rychlo(int *p,int l,int s)
-{ 
-    s=l-s;
+{
+	s=l-s;
 	int i,j,temp,posun;
 	for (i=0;i<NSD(l,s);i++)
 	{
@@ -52,7 +52,7 @@ int main()
     printf("\nZadaj s, pocet pozicii o ktore sa pole posunie:\n");
     
 	scanf("%d", &k);
-     
+  
     cyklicky_posun_rychlo(pole,n,k);
     printf("Pole po posunuti:\n");
  
